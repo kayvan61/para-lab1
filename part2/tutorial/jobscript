@@ -1,0 +1,13 @@
+#!/bin/bash
+# filename: batchscript
+
+#SBATCH -J build_cilk                           # job name
+#SBATCH -o build_cilk.o%j                       # output and error file name (%j expands to jobID)
+#SBATCH -n 1                              # total number of mpi tasks requested
+#SBATCH -N 1                                # number of mpi nodes requested
+#SBATCH -p development                      # queue (partition) -- normal, development, etc.
+#SBATCH -t 00:00:30                         # run time (hh:mm:ss) - 30 seconds
+#SBATCH --mail-user=cynienhuis@utexas.edu
+#SBATCH --mail-type=begin                   # email me when the job starts
+#SBATCH --mail-type=end                     # email me when the job finishes
+time ./fib 40

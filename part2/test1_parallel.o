@@ -1,0 +1,4 @@
+time ./test_mm 1 1 1000
+1000.000000
+21.52user 0.13system 0:00.39elapsed 5554%CPU (0avgtext+0avgdata 97800maxresident)k
+1010inputs+8outputs (28major+9562minor)pagefaults 0swaps
