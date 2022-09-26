@@ -7,11 +7,11 @@
 // row major
 void mm(double *result, double *a, double *b, int dim_size) {
   int k;
-  for (int y = 0; y < dim_size; ++y) {
-   for (int x = 0; x < dim_size; ++x) {
+  cilk_for (int y = 0; y < dim_size; ++y) {
+   cilk_for (int x = 0; x < dim_size; ++x) {
       double r = 0.0;
       for (k = 0; k < dim_size; ++k) {
-	r += a[y * dim_size + k] *  b[k * dim_size + x];
+        r += a[y * dim_size + k] *  b[k * dim_size + x];
       }
       result[y * dim_size + x] = r;
     }
